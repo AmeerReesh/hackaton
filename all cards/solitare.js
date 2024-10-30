@@ -590,7 +590,8 @@ function addLinkedImages(currentImg) {
     // linkedImages.push(...otherImgs); // הוספת התמונות הנוספות למערך
     // dragEventLisener(mainImg); // קריאה לפונקציית האירועים עבור התמונה הראשית
 }
-const headsection = document.getElementById("headd");
+////crete 7 card in headd
+const headd = document.getElementById("sevenCards");
 for (let i=33 ; i<40; i++){
     const num =numbers[i];//random num from 1-40
     const imgCard =  Cards[`img${num}`];
@@ -598,15 +599,19 @@ for (let i=33 ; i<40; i++){
     imgCard.style.display ="none";
     console.log("id=:"+imgCard.num);
     headd.appendChild(imgCard);
-   
 } 
+// 7 cards
 function HIDDENCARD(img){
     for (let i=33 ; i<40; i++){
 
         const num =numbers[i];//random num from 1-40
         const imgCard =  Cards[`img${num}`];
-    if(imgCard != img)
-        imgCard.style.display ="none";
+        if (sevenCards.contains(imgCard)){
+            if(imgCard != img)
+                imgCard.style.display ="none";
+        }
+    // if(imgCard != img)
+    //     imgCard.style.display ="none";
         
     } 
 }
@@ -633,42 +638,153 @@ function HIDDENCARD(img){
             imgCard.style.width = "200px";
             imgCard.style.height = "250px";
             imgCard.style.position = "absolute";
-            imgCard.style.gridColumnStart = 3;
-            imgCard.style.gridColumnEnd = 4;
+            
         } else {
             console.error("Image not found with ID:", imgId); // הצגת שגיאה בקונסול אם התמונה לא נמצאה
         }
     }
 });
-// const sevenNumbersArr = [numbers[34], numbers[35], numbers[36], numbers[37], numbers[38], numbers[39], numbers[40]];
-// const imgHead = document.getElementById("imgHead");
+/////get wich group is the card
+function Group(img){
+    const num= img.num;
+    if(num<11) return "S";
+    if( num>10 && num<21 ) return "A";
+    if( num>20 && num<31 ) return "B";
+    if( num>30 && num<41 ) return "C";
+}
+// const imgS = document.getElementById("Shead");
+// const imgA = document.getElementById("ahead");
+// const imgB = document.getElementById("bhead");
+// const imgC = document.getElementById("chead");
 
-// if (imgHead) { // בדיקה אם האלמנט נמצא
-//     let clickedNum = sevenNumbersArr.length; // Start at the length of the array to go backward
-
-//     imgHead.addEventListener("click", () => {
-//         if (sevenNumbersArr.length > 0) { // Check if the array is not empty
-//             if (clickedNum === 0) { // Use `===` for comparison
-//                 clickedNum = sevenNumbersArr.length; // Reset clickedNum when it reaches 0
-//             }
-
-//             clickedNum--; // Decrement clickedNum to move to the previous item
-//             const imgCard = Cards[`img${sevenNumbersArr[clickedNum]}`]; // Get the current image element by its ID
-//             console.log(sevenNumbersArr[clickedNum]);
+// const headS = document.getElementById("shead");
+// const headA = document.getElementById("Ahead");
+// const headB = document.getElementById("Bhead");
+// const headC = document.getElementById("Chead");
+// let SGroupCounter =1;
+// let AGroupCounter =1;
+// let BGroupCounter =1;
+// let CGroupCounter =1;
+// //// double click event
+// for (let i = 0; i < 40; i++) {
+//     const img = Cards[`img${numbers[i]}`];
+    
+   
+//     img.addEventListener('dblclick', (e) => {
+//         if (Group(img)=="S" &&  getCardNum (img)==SGroupCounter ){
+//             img.style.zIndex =SGroupCounter;
+//             SGroupCounter++;
+//             headS.appendChild(img);
+//             img.style.position = "absolute";
+//             img.style.left = 0;
+//             img.style.top = (parseInt(img.style.top, 10)) + "px";
+//             img.style.gridColumnStart = 3;
+//             img.style.gridColumnEnd = 4;
             
-//             // בדיקה אם imgCard מוגדר
-//             if (imgCard) {
-//                 // Apply styles to imgCard
-//                 imgCard.style.width = "200px";
-//                 imgCard.style.height = "250px";
-//                 imgCard.style.position = "absolute";
-//                 imgCard.style.gridColumnStart = 2;
-//                 imgCard.style.gridColumnEnd = 3;
-//             } else {
-//                 console.error("Image not found in Cards for id:", `img${sevenNumbersArr[clickedNum]}`);
-//             }
+
+//         }
+//         if (Group(img)=="A" &&  getCardNum (img)==AGroupCounter ){
+//             img.style.zIndex =AGroupCounter;
+//             AGroupCounter++;
+//             headA.appendChild(img);
+//             // img.style.position = "absolute";
+//             img.style.left = 0;
+//             img.style.top = (parseInt(img.style.top, 10)) + "px";
+//             img.style.gridColumnStart = 4;
+//             img.style.gridColumnEnd = 5;
+            
+            
+//         }
+//         if (Group(img)=="B" &&  getCardNum (img)==BGroupCounter ){
+//             img.style.zIndex =BGroupCounter;
+//             BGroupCounter++;
+//             headB.appendChild(img);
+//             // img.style.position = "absolute";
+//             img.style.left = 0;
+//             img.style.top = (parseInt(img.style.top, 10)) + "px";
+//             img.style.gridColumnStart = 5;
+//             img.style.gridColumnEnd = 6;
+           
+//         }
+//         if (Group(img)=="C" &&  getCardNum (img)==CGroupCounter ){
+//             img.style.zIndex =CGroupCounter;
+//             CGroupCounter++;
+//             headC.appendChild(img);
+//             // img.style.position = "absolute";
+//             img.style.left = 0;
+//             img.style.top = (parseInt(img.style.top, 10)) + "px";
+//             img.style.gridColumnStart = 6;
+//             img.style.gridColumnEnd = 7;
+            
 //         }
 //     });
-// } else {
-//     console.error("Element with ID 'imagHead' not found.");
 // }
+
+const imgS = document.getElementById("SHead");
+const imgA = document.getElementById("aHead");
+const imgB = document.getElementById("bHead");
+const imgC = document.getElementById("cHead");
+
+const headS = document.getElementById("shead");
+const headA = document.getElementById("Ahead");
+const headB = document.getElementById("Bhead");
+const headC = document.getElementById("Chead");
+
+let SGroupCounter = 1;
+let AGroupCounter = 1;
+let BGroupCounter = 1;
+let CGroupCounter = 1;
+
+for (let i = 0; i < 40; i++) {
+    const img = Cards[`img${numbers[i]}`];
+
+    img.addEventListener('dblclick', (e) => {
+        // במקרה של קבוצה S
+        if (Group(img) === "S" && getCardNum(img) === SGroupCounter) {
+            HideImageCover(img);
+            SGroupCounter++;
+            headS.appendChild(img);
+            img.style.position = "absolute";
+            img.style.left = `${imgS.offsetLeft}px`;
+            img.style.top = `${imgS.offsetTop}px`;
+            img.style.zIndex = SGroupCounter;
+            
+        }
+
+        // במקרה של קבוצה A
+        if (Group(img) === "A" && getCardNum(img) === AGroupCounter) {
+            HideImageCover(img);
+            AGroupCounter++;
+            headA.appendChild(img);
+            img.style.position = "absolute";
+            img.style.left = `${imgA.offsetLeft}px`;
+            img.style.top = `${imgA.offsetTop}px`;
+            img.style.zIndex = AGroupCounter;
+            
+        }
+
+        // במקרה של קבוצה B
+        if (Group(img) === "B" && getCardNum(img) === BGroupCounter) {
+            HideImageCover(img);
+            BGroupCounter++;
+            headB.appendChild(img);
+            img.style.position = "absolute";
+            img.style.left = `${imgB.offsetLeft}px`;
+            img.style.top = `${imgB.offsetTop}px`;
+            img.style.zIndex = BGroupCounter;
+           
+        }
+
+        // במקרה של קבוצה C
+        if (Group(img) === "C" && getCardNum(img) === CGroupCounter) {
+            HideImageCover(img);
+            CGroupCounter++;
+            headC.appendChild(img);
+            img.style.position = "absolute";
+            img.style.left = `${imgC.offsetLeft}px`;
+            img.style.top = `${imgC.offsetTop}px`;
+            img.style.zIndex = CGroupCounter;
+            
+        }
+    });
+}
