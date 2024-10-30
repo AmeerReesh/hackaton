@@ -2,18 +2,32 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 body{
     display: grid;
     grid-template-columns: 1fr 4fr 1fr; 
-    height: 100vh;
+    /* height: 100vh; */
+    height: auto;
+}
+.center-content{
+    height: auto;
+    overflow: hidden; 
+}
+header{
+    position: fixed; 
+    top: 0; 
+    width: 67%; 
+    z-index: 100; 
+    background-color: transparent; 
+    transition: background-color 0.3s ease; 
 }
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 
 .nav-links {
     list-style: none;
@@ -80,11 +94,12 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 300px;
     padding: 0 20px;
     height: 70vh;
     position: relative;
     overflow: hidden;
+    height: auto;
     /* z-index: 10; */
 }
 
@@ -217,10 +232,164 @@ main {
     font-size: 30px;
     cursor: pointer;
 }
+
+/* section cards */
+
+.new-section {
+    grid-column: 1 / -1; 
+    border-top: solid 1px #dee2e6;
+    margin-top: 350px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.divider {
+    border: none;
+    height: 2px;
+    background-color: #ccc; 
+    margin: 20px 0; 
+}
+
+.content {
+    margin: 0 auto; 
+}
+.new-section {
+    padding: 2rem 0; 
+}
+
+
+
+.card-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    justify-items: center; 
+    align-items: center; 
+    max-width: 1200px;
+    width:80%; 
+    overflow: hidden; 
+    margin: 100px auto;
+    
+}
+
+.card {
+    background-color: #fff; 
+    width: 200px; 
+    height: 200px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s; 
+    padding: 10px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+}
+
+.card-icon {
+    font-size: 3rem; 
+    color: #ff7956; 
+    margin-bottom: 10px; 
+}
+.card h3{
+    color:#50585e
+}
+
+/* inventors section */
+
+.inventors-section {
+    grid-column: 1/-1; 
+    padding: 50px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #dee2e6;
+}
+.albert-div{
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    width: 50%;
+    
+}
+.info-albert{
+    width: 50%;
+    overflow: hidden;
+}
+.info-albert h2{
+    font-family: 'Montserrat', sans-serif;
+    color: #485056;
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.info-albert p{
+    color: #5d656a;
+    text-align: center;
+    font-size:18px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+}
+
+/* about us section */
+
+.about-us{
+    grid-column: 1/-1; 
+    padding: 50px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+}
+.about-us h2{
+    font-size: 50px;
+    color: #ff7955;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 90px;
+}
+.paragraph-container {
+    display: flex;
+    justify-content: space-between; /* Spaces paragraphs evenly */
+    gap: 150px; /* Adds space between each paragraph */
+    margin-bottom: 30px;
+}
+
+.about-paragraph {
+    flex: 1; /* Ensures paragraphs share equal space */
+    width: 250px;
+    height: 250px;
+}
+.about-paragraph h3{
+    font-family: 'Montserrat', sans-serif;
+    color: #485056;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.about-paragraph p{
+    color: #5d656a;
+    text-align: center;
+    font-size:20px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+}
+/* responsive section */
+
 @media (max-width: 1600px) {
     .main-img-2{
         left:600px;
     }
+  
 }
 
 @media (max-width: 1324px) {
@@ -228,12 +397,17 @@ main {
         grid-template-columns: 1fr; 
         padding: 0;
     }
+    header{
+        width: 100%;
+    }
     
     .navbar {
         padding: 0 20px;
     }
 
-    
+    .card-section {
+        grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    }
     .nav-links {
         display: none; 
         flex-direction: column;
@@ -266,7 +440,7 @@ main {
         flex-direction: column; 
         padding: 20px;
         height: auto;
-        margin-top: 0;
+        margin-top: 100px;
     }
     .get-started-btn,
     .get-learn-btn {
@@ -278,9 +452,45 @@ main {
     .main-img-2{
         display: none;
     }
+    .card-section {
+        grid-template-columns: 1fr;  /* One card per row */
+    }
+    .inventors-section {
+        grid-template-columns: 1fr; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+    .albert-div {
+        flex-direction: column; /* Stack image and text vertically */
+        margin-bottom: 30px; /* Add space between sections */
+    }
+    .albert-div img {
+        width: 80%; /* Make images smaller for mobile */
+        max-width: 250px; /* Set a maximum width */
+        margin-bottom: 15px;
+    }
+    .info-albert h2 {
+        font-size: 24px; /* Adjust font size for mobile */
+    }
+    .info-albert p {
+        font-size: 16px; /* Adjust font size for mobile */
+        padding: 0 15px; /* Add padding for readability */
+    }
+    .paragraph-container {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
+
+
 @media (max-width: 768px) {
+    body{
+        grid-template-columns: 1fr; 
+    }
     .nav-links {
         display: none; 
         flex-direction: column;
@@ -321,5 +531,36 @@ main {
         padding: 10px 20px; 
         width: 80%; 
         margin: 10px 0; 
+    }
+    .card-section {
+        grid-template-columns: 1fr;  /* One card per row */
+    }
+    .inventors-section {
+        grid-template-columns: 1fr; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+    .albert-div {
+        flex-direction: column; /* Stack image and text vertically */
+        margin-bottom: 30px; /* Add space between sections */
+    }
+    .albert-div img {
+        width: 80%; /* Make images smaller for mobile */
+        max-width: 250px; /* Set a maximum width */
+        margin-bottom: 15px;
+    }
+    .info-albert h2 {
+        font-size: 24px; /* Adjust font size for mobile */
+    }
+    .info-albert p {
+        font-size: 16px; /* Adjust font size for mobile */
+        padding: 0 15px; /* Add padding for readability */
+    }
+    .paragraph-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
