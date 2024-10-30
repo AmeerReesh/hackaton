@@ -2,12 +2,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: #f4f2e8;
 }
 body{
     display: grid;
     grid-template-columns: 1fr 4fr 1fr; 
-    /* height: 100vh; */
+    overflow-x: hidden; 
     height: auto;
 }
 .center-content{
@@ -30,7 +30,6 @@ header{
 
 
 .nav-links {
-    list-style: none;
     display: flex;
     /* z-index: 9; */
 }
@@ -56,38 +55,42 @@ header{
 }
 
 .nav-links li:first-child a {
-    color: #ff7956; 
+    color: #3f621c; 
 }
-
+a{
+    text-decoration: none;
+}
 .nav-links li a {
     font-size: 20px;
     text-decoration: none;
-    color: #8f8f8f; 
+    color: #2880a0; 
     font-weight: 700;
     transition: all 0.3s;
     font-family: 'Poppins', sans-serif;
 }
 
 .nav-links li a.btn-link {
-    background-color: #ff7956;
-    color: white; 
+    background-color: #3f621c;
+    color: #f4f2e8; 
     padding: 10px 30px; 
     border-radius: 25px; 
 
 }
 
+
 .nav-links li a:hover {
-    color: #666666; 
+    color: #1e607b;
 }
 
 .nav-links li a.btn-link:hover {
-    background-color: #e06749; 
+    background-color: #5a8a2d;
 }
 
 .navbar img {
     width: 36%;
     max-width: 100px;
-    height: 12vh;
+    height: 10vh;
+    margin-top: 12px;
 }
 
 main {
@@ -111,7 +114,7 @@ main {
 .wraps h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
-    color: #485056;
+    color: #1c1c1c;
     font-weight: bold;
     margin-bottom: 20px;
     opacity: 0;
@@ -130,14 +133,14 @@ main {
 .wraps p.home-desc {
     font-family: 'Lora', serif;
     font-size: 20px;
-    color: #6d7378;
+    color: #333333;
     line-height: 1.6;
     margin-bottom: 30px;
     padding: 0 10px;
 }
 
 .get-started-btn {
-    background-color: #ff7956;
+    background-color: #3f621c;
     color: #fff;
     padding: 12px 25px;
     font-size: 24px;
@@ -152,7 +155,7 @@ main {
     width: 35%;
 }
 .get-learn-btn{
-    background-color: #343a3f;
+    background-color: #2880a0;
     color: #fff;
     padding: 12px 25px;
     font-size: 24px;
@@ -169,7 +172,7 @@ main {
 
 
 .get-learn-btn:hover {
-    background: linear-gradient(135deg, #4a5057, #343a3f);
+    background-color: #1e607b;
     transform: scale(1.05); 
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
 }
@@ -179,7 +182,7 @@ main {
 }
 
 .get-started-btn:hover {
-    background-color: #e06749;
+    background-color: #5a8a2d;
     transform: scale(1.05); 
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
 }
@@ -208,7 +211,7 @@ main {
     z-index: 2; 
     position: absolute;
     left:800px;
-    top:200px;
+    top:100px;
     animation: shake 0.5s ease-in-out 2, fadeOut 1s ease 1s forwards;
 }
 @keyframes shake {
@@ -237,17 +240,16 @@ main {
 
 .new-section {
     grid-column: 1 / -1; 
-    border-top: solid 1px #dee2e6;
     margin-top: 350px;
-    border-bottom: 1px solid #dee2e6;
+    background-color: #3f621c;
 }
 
-.divider {
+/* .divider {
     border: none;
     height: 2px;
     background-color: #ccc; 
     margin: 20px 0; 
-}
+} */
 
 .content {
     margin: 0 auto; 
@@ -259,6 +261,7 @@ main {
 
 
 .card-section {
+    background-color: #3f621c;
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 20px; 
@@ -272,7 +275,7 @@ main {
 }
 
 .card {
-    background-color: #fff; 
+    background-color: #f4f2e8; 
     width: 200px; 
     height: 200px; 
     display: flex; 
@@ -280,7 +283,7 @@ main {
     justify-content: center; 
     align-items: center; 
     border-radius: 10px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s; 
     padding: 10px;
     text-align: center;
@@ -292,11 +295,13 @@ main {
 
 .card-icon {
     font-size: 3rem; 
-    color: #ff7956; 
+    color:  #3f621c;;
+   
     margin-bottom: 10px; 
 }
 .card h3{
-    color:#50585e
+    color:#1c1c1c;
+    
 }
 
 /* inventors section */
@@ -309,30 +314,38 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #dee2e6;
+    background-color: #f4f2e8;
 }
 .albert-div{
     display: flex;
     overflow: hidden;
     align-items: center;
     width: 50%;
+    background-color: #f4f2e8;
     
 }
 .info-albert{
     width: 50%;
     overflow: hidden;
+    background-color: #f4f2e8;
+}
+.albert-div img{
+    background-color: #f4f2e8;
+    max-height: 500px;
 }
 .info-albert h2{
     font-family: 'Montserrat', sans-serif;
-    color: #485056;
+    color: #1c1c1c;
     text-align: center;
     margin-bottom: 6px;
     font-size: 32px;
     font-weight: bold;
+    background-color: #f4f2e8;
 }
 .info-albert p{
-    color: #5d656a;
+    color: #333333;
     text-align: center;
+    background-color: #f4f2e8;
     font-size:18px;
     font-weight: bold;
     font-family: 'Merriweather', serif;
@@ -348,41 +361,135 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #dee2e6;
     text-align: center;
+    background-color: #2880a0;
+    padding-bottom: 200px;
+    padding-top: 200px;
 }
 .about-us h2{
     font-size: 50px;
-    color: #ff7955;
+    color: #f4f2e8;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 90px;
+    background-color: #2880a0;
 }
 .paragraph-container {
     display: flex;
-    justify-content: space-between; /* Spaces paragraphs evenly */
-    gap: 150px; /* Adds space between each paragraph */
+    justify-content: space-between; 
+    gap: 150px; 
+    background-color: #2880a0;
     margin-bottom: 30px;
 }
 
 .about-paragraph {
-    flex: 1; /* Ensures paragraphs share equal space */
+    flex: 1; 
+    background-color: #2880a0;
     width: 250px;
     height: 250px;
 }
 .about-paragraph h3{
     font-family: 'Montserrat', sans-serif;
-    color: #485056;
+    color: #1c1c1c;
     font-size: 32px;
     font-weight: bold;
+    background-color: #2880a0;
     margin-bottom: 10px;
 }
 .about-paragraph p{
-    color: #5d656a;
+    color: #333333;
+    background-color: #2880a0;
     text-align: center;
     font-size:20px;
     font-weight: bold;
     font-family: 'Merriweather', serif;
 }
+
+/* Footer section */
+
+.footer{
+    grid-column: 1/-1; 
+    padding: 50px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content:space-between;
+    width: 100vw; 
+    box-sizing: border-box;
+    background-color: #1c1c1c;
+}
+.footer-info{
+    background-color: #1c1c1c;
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    margin-left: 200px;
+    width: 100%;
+    color: #f4f2e8;
+    max-width: 1200px; 
+    margin-bottom: 20px; 
+}
+.quick-links,
+.follow-us,
+.address {
+    flex-direction: column;
+    display: flex;
+    background-color: #1c1c1c;
+    text-align: left;
+    width: 30%;
+}
+.quick-links h2,.follow-us h2,.address h2{
+    margin-bottom: 12px;
+}
+.quick-links ul li,.follow-us ul li,.address ul li{
+    display: flex;
+    align-items: center; 
+}
+.quick-links ul li i,.follow-us ul li i,.address ul li i{
+    padding: 10px;
+    font-size: 20px;
+}
+ul li i:hover{
+    color:#e0dcd5;
+    cursor: pointer;
+}
+ul{
+    padding: 0;
+}
+.quick-links ul ,.follow-us ul ,.address ul {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.quick-links *,
+.follow-us *,
+.address *{
+    background-color: #1c1c1c;
+    color: #f4f2e8;
+}
+ul{
+    list-style: none;
+}
+.address p{
+    display: inline-block;
+}
+
+
+.footer-end{
+    background-color: #3f621c;
+    color: #f4f2e8;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 3vh;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+
 /* responsive section */
 
 @media (max-width: 1600px) {
@@ -406,7 +513,7 @@ main {
     }
 
     .card-section {
-        grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+        grid-template-columns: repeat(2, 1fr); 
     }
     .nav-links {
         display: none; 
@@ -453,7 +560,7 @@ main {
         display: none;
     }
     .card-section {
-        grid-template-columns: 1fr;  /* One card per row */
+        grid-template-columns: 1fr; 
     }
     .inventors-section {
         grid-template-columns: 1fr; 
@@ -464,20 +571,20 @@ main {
         text-align: center;
     }
     .albert-div {
-        flex-direction: column; /* Stack image and text vertically */
-        margin-bottom: 30px; /* Add space between sections */
+        flex-direction: column; 
+        margin-bottom: 30px; 
     }
     .albert-div img {
-        width: 80%; /* Make images smaller for mobile */
-        max-width: 250px; /* Set a maximum width */
+        width: 80%; 
+        max-width: 250px;
         margin-bottom: 15px;
     }
     .info-albert h2 {
-        font-size: 24px; /* Adjust font size for mobile */
+        font-size: 24px; 
     }
     .info-albert p {
-        font-size: 16px; /* Adjust font size for mobile */
-        padding: 0 15px; /* Add padding for readability */
+        font-size: 16px; 
+        padding: 0 15px; 
     }
     .paragraph-container {
         flex-direction: column;
@@ -533,7 +640,7 @@ main {
         margin: 10px 0; 
     }
     .card-section {
-        grid-template-columns: 1fr;  /* One card per row */
+        grid-template-columns: 1fr; 
     }
     .inventors-section {
         grid-template-columns: 1fr; 
@@ -544,23 +651,29 @@ main {
         text-align: center;
     }
     .albert-div {
-        flex-direction: column; /* Stack image and text vertically */
-        margin-bottom: 30px; /* Add space between sections */
+        flex-direction: column; 
+        margin-bottom: 30px; 
     }
     .albert-div img {
-        width: 80%; /* Make images smaller for mobile */
-        max-width: 250px; /* Set a maximum width */
+        width: 80%; 
+        max-width: 250px; 
         margin-bottom: 15px;
     }
     .info-albert h2 {
-        font-size: 24px; /* Adjust font size for mobile */
+        font-size: 24px; 
     }
     .info-albert p {
-        font-size: 16px; /* Adjust font size for mobile */
-        padding: 0 15px; /* Add padding for readability */
+        font-size: 16px; 
+        padding: 0 15px; 
     }
     .paragraph-container {
         flex-direction: column;
         align-items: center;
+    }
+    .footer-info{
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        gap: 20px;
     }
 }
