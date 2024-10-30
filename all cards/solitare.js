@@ -82,29 +82,29 @@ if(i>30 & i<33){
 }
 
 }
-// // // first card
-// const num1 =numbers[0];//random num from 1-40
-// const img1 =  Cards[`img${num1}`];
-// img1.style.width = "200px";
-// img1.style.height = "250px";
-// img1.style.position ="absolute";
-// img1.style.display ="block";
-// img1.style.zIndex= 8;
-// img1.style.left = 0 ;
-// img1.style.top = (7) * 40 + "px";
-// colomnOne.appendChild(img1);
+// // first card
+const num1 =numbers[0];//random num from 1-40
+const img1 =  Cards[`img${num1}`];
+img1.style.width = "200px";
+img1.style.height = "250px";
+img1.style.position ="absolute";
+img1.style.display ="block";
+img1.style.zIndex= 8;
+img1.style.left = 0 ;
+img1.style.top = (7) * 40 + "px";
+colomnOne.appendChild(img1);
 
-// //second card
-// const num2 =numbers[8];//random num from 1-40
-// const img2 =  Cards[`img${num2}`];
-// img2.style.width = "200px";
-// img2.style.height = "250px";
-// img2.style.position ="absolute";
-// img2.style.display ="block";
-// img2.style.zIndex= 7;
-// img2.style.left = 0 ;
-//  img2.style.top = (6) * 40 + "px";
-// colomnTwo.appendChild(img2);
+//second card
+const num2 =numbers[8];//random num from 1-40
+const img2 =  Cards[`img${num2}`];
+img2.style.width = "200px";
+img2.style.height = "250px";
+img2.style.position ="absolute";
+img2.style.display ="block";
+img2.style.zIndex= 7;
+img2.style.left = 0 ;
+ img2.style.top = (6) * 40 + "px";
+colomnTwo.appendChild(img2);
 
 //third card
 const num3 =numbers[15];//random num from 1-40
@@ -228,33 +228,33 @@ else{
 //     }
 // }
 
-// כרטיס ראשון
-const num1 = numbers[0]; // מספר רנדומלי בין 1-40
-const img1 = Cards[`img${num1}`];
-img1.style.width = "200px";
-img1.style.height = "250px";
-img1.style.position = "absolute";
-img1.style.display = "block";
-img1.style.zIndex = 8;
-img1.style.left = "0px";
-img1.style.top = (7) * 40 + "px";
-colomnOne.appendChild(img1);
+// // כרטיס ראשון
+// const num1 = numbers[0]; // מספר רנדומלי בין 1-40
+// const img1 = Cards[`img${num1}`];
+// img1.style.width = "200px";
+// img1.style.height = "250px";
+// img1.style.position = "absolute";
+// img1.style.display = "block";
+// img1.style.zIndex = 8;
+// img1.style.left = "0px";
+// img1.style.top = (7) * 40 + "px";
+// colomnOne.appendChild(img1);
 
-// כרטיס שני
-const num2 = numbers[8]; // מספר רנדומלי בין 1-40
-const img2 = Cards[`img${num2}`];
-img2.style.width = "200px";
-img2.style.height = "250px";
-img2.style.position = "absolute";
-img2.style.display = "block";
-img2.style.zIndex = 7;
-img2.style.left = "0px";
-img2.style.top = (6) * 40 + "px";
-colomnTwo.appendChild(img2);
+// // כרטיס שני
+// const num2 = numbers[8]; // מספר רנדומלי בין 1-40
+// const img2 = Cards[`img${num2}`];
+// img2.style.width = "200px";
+// img2.style.height = "250px";
+// img2.style.position = "absolute";
+// img2.style.display = "block";
+// img2.style.zIndex = 7;
+// img2.style.left = "0px";
+// img2.style.top = (6) * 40 + "px";
+// colomnTwo.appendChild(img2);
 
 // הפיכת התמונות לנגררות
-img1.draggable = true;
-img2.draggable = true;
+// img1.draggable = true;
+// img2.draggable = true;
 
 // // פונקציית גרירה ושחרור
 // function dragEventLisener(img1, img2) {
@@ -345,45 +345,51 @@ img2.draggable = true;
 //     });
 // }
 
-function dragEventLisener(img1, img2) {
-    // התחלת גרירה על img1
-    img1.addEventListener('dragstart', (e) => {
-        e.dataTransfer.setData('text/plain', img1.id); // שמירת ה-ID של img1
-    });
+// function dragEventLisener(img1, img2) {
+   
+//     img1.addEventListener('dragstart', (e) => {
+//         disableOtherDrags(img1);
+//         e.dataTransfer.setData('text/plain', img1.id); // שמירת ה-ID של img1
+//     });
 
-    // אפשרות שחרור על img2
-    img2.addEventListener('dragover', (e) => {
-        e.preventDefault(); // מאפשר שחרור על img2
-    });
+//     // אפשרות שחרור על img2
+//     img2.addEventListener('dragover', (e) => {
+//         e.preventDefault(); // מאפשר שחרור על img2
+//     });
 
-    // שחרור על img2
-    img2.addEventListener('drop', (e) => {
-        e.preventDefault();
-        const draggedImgId = e.dataTransfer.getData('text/plain'); // קבלת ה-ID של התמונה שנגררה
-        const draggedImg = document.getElementById(draggedImgId); // מציאת האלמנט של img1
+//     // שחרור על img2
+//     img2.addEventListener('drop', (e) => {
+//         e.preventDefault();
+//         const draggedImgId = e.dataTransfer.getData('text/plain'); // קבלת ה-ID של התמונה שנגררה
+//         const draggedImg = document.getElementById(draggedImgId); // מציאת האלמנט של img1
 
-        // בדיקה אם קיימת התמונה שנגררה
-        if (draggedImg && DropChecker(img2, img1) && (getCardNum(img1)+1)===getCardNum(img2)) {
-            // העברה של img1 לעמודה של img2
-            HideImageCover(img1);
-            img1.style.top = (parseInt(img2.style.top, 10) + 40) + "px";
-            img1.style.zIndex = parseInt(img2.style.zIndex, 10) + 1;
-            console.log("true");
-            
-            img2.parentNode.appendChild(draggedImg); // הוספת img1 לאותה עמודה שבה נמצא img2
-        }
-    });
-}
+//         // בדיקה אם קיימת התמונה שנגררה
+//         if (draggedImg && DropChecker(img2, img1) && (getCardNum(img1)+1)===getCardNum(img2)) {
+//             // העברה של img1 לעמודה של img2
+//             HideImageCover(img1);
+//             img1.style.top = (parseInt(img2.style.top, 10) + 40) + "px";
+//             img1.style.zIndex = parseInt(img2.style.zIndex, 10) + 1;
+//             console.log("draggedImg is" +draggedImg);
+//             console.log("draggedImg.num"+draggedImg.num);
+//             img2.parentNode.appendChild(draggedImg); // הוספת img1 לאותה עמודה שבה נמצא img2
+           
+//         }
+//         enableAllDrags();
+//     });
+// }
 
-//add event lisener for all the cards 
-for (let i = 0; i < 40; i++) {
-    const img  = Cards[`img${numbers[i]}`];
+// //add event lisener for all the cards 
+// for (let i = 0; i < 40; i++) {
+//     const img  = Cards[`img${numbers[i]}`];
     
-    for (let j = 0; j < 40; j++) {
-        const img2 =Cards[`img${numbers[j]}`];
-        dragEventLisener(img, img2);
-    }
-}
+//     for (let j = 0; j < 40; j++) { 
+//         if(i != j){
+//             const img2 =Cards[`img${numbers[j]}`];
+//             dragEventLisener(img, img2);
+//         }
+        
+//     }
+// }
 // dragEventLisener(img1, img2);
 // dragEventLisener(img1, img3);
 // dragEventLisener(img1, img4);
@@ -438,9 +444,11 @@ function getCardNum (img)
 // function that checks the position of the drag img 
 function positionImg(draggedImg) {
     const imgNum = draggedImg.num; 
+    console.log(imgNum);
+    
     for (let i = 0; i < 40; i++) {
-        if (i < 9 && numbers[i] === imgNum) return 1;
-        if (i >= 9 && i < 15 && numbers[i] === imgNum) return 2;
+        if (i < 8 && numbers[i] === imgNum) return 1;
+        if (i >= 8 && i < 15 && numbers[i] === imgNum) return 2;
         if (i >= 15 && i < 21 && numbers[i] === imgNum) return 3;
         if (i >= 21 && i < 26 && numbers[i] === imgNum) return 4;
         if (i >= 26 && i < 30 && numbers[i] === imgNum) return 5;
@@ -457,10 +465,8 @@ function HideImageCover(img1) {
     
     const indexZ = parseInt(img1.style.zIndex) || 0; // המרת zIndex למספר
     const position = positionImg(img1); // שמירת הערך המוחזר מהפונקציה במשתנה
-console.log("indexz =" +indexZ);
-console.log(position);
-
-
+    console.log("indexz =" +indexZ);
+    console.log("position"+position);
 
     // שימוש בתנאים המבוססים על position
     if (position === 1 && indexZ > 1) {
@@ -469,12 +475,13 @@ console.log(position);
     }
     if (position === 2) {
         const img = document.getElementById(`imgCover${indexZ +7}`);//9
+        
         if (img) img.style.display = "none";
     }
     if (position === 3) {
         const img = document.getElementById(`imgCover${indexZ +14}`);//16
-        console.log(img);
-        console.log(indexZ +15 );
+        console.log("imgCOVER"+img);
+        
         
         
         
@@ -496,108 +503,172 @@ console.log(position);
 
 
 
+let draggedImage = null; // משתנה גלובלי שמאחסן את התמונה הנגררת
 
+// השבתת יכולת גרירה עבור כל התמונות פרט לתמונה הנגררת
+function disableOtherDrags(currentImg) {
+    for (let i = 0; i < 40; i++) {
+        const img = Cards[`img${numbers[i]}`];
+        if (img !== currentImg) {
+            img.draggable = false; // ביטול גרירה על שאר התמונות
+        }
+    }
+}
 
+// הפעלת יכולת גרירה לכל התמונות
+function enableAllDrags() {
+    for (let i = 0; i < 40; i++) {
+        const img = Cards[`img${numbers[i]}`];
+        img.draggable = true; // החזרת יכולת הגרירה
+    }
+}
 
-
-
-
-
-
-
-
-
-// ///////////////this function about the darg event lisener//////////////
-// function dragEventLisener(img1,img2){
-//     img1.addEventListener('dragstart', (e) => {
-//         e.dataTransfer.effectAllowed = 'move';
-//     });
-//     img2.addEventListener('dragover', (e) => {
-//         e.preventDefault();
-//     });
+// הגדרת מאזין dragstart, dragover, ו-drop לכל תמונה
+for (let i = 0; i < 40; i++) {
+    const img = Cards[`img${numbers[i]}`];
     
-    
-//     img2.addEventListener('drop', (e) => {
-//         if (DropChecker(img2, img1)) {
-//             e.preventDefault();
-//             const indexZ = img1.style.zIndex;
-    
-//             // Use double `==` for comparison
-//             if (positionImg(img2) === 1) {
-//                 colomnOne.appendChild(img1);
-//             }
-//             if (positionImg(img2) === 2) {
-//                 colomnTwo.appendChild(img1);
-//             }
-//             if (positionImg(img2) === 3) {
-//                 colomnThree.appendChild(img1);
-//             }
-//             if (positionImg(img2) === 4) {
-//                 colomnFour.appendChild(img1);
-//             }
-//             if (positionImg(img2) === 5) {
-//                 colomnFive.appendChild(img1);
-//             }
-//             if (positionImg(img2) === 6) {
-//                 colomnSix.appendChild(img1);
-//             }
-    
-//             // Hide image with id = "imgCoverX" based on zIndex
-//             if (positionImg(img1) === 1 && indexZ > 1) {
-//                 const img = document.getElementById(`imgCover${indexZ - 1}`);
-//                 if (img) img.style.display = "none";
-//             }
-//             if (positionImg(img1) === 2) {
-//                 const img = document.getElementById(`imgCover${indexZ - 9}`);
-//                 if (img) img.style.display = "none";
-//             }
-//             if (positionImg(img1) === 3) {
-//                 const img = document.getElementById(`imgCover${indexZ - 16}`);
-//                 if (img) img.style.display = "none";
-//             }
-//             if (positionImg(img1) === 4) {
-//                 const img = document.getElementById(`imgCover${indexZ - 22}`);
-//                 if (img) img.style.display = "none";
-//             }
-//             if (positionImg(img1) === 5) {
-//                 const img = document.getElementById(`imgCover${indexZ - 27}`);
-//                 if (img) img.style.display = "none";
-//             }
-//             if (positionImg(img1) === 6) {
-//                 const img = document.getElementById(`imgCover${indexZ - 30}`);
-//                 if (img) img.style.display = "none";
-//             }
-//         }
-//     });
-// }
-// dragEventLisener(img1,img2)   ;
-    
+    // כאשר מתחילים לגרור את התמונה
+    img.addEventListener('dragstart', (e) => {
+        draggedImage = img; // שמירת התמונה הנגררת במשתנה
+        e.dataTransfer.setData('text/plain', img.id); // שמירת ה-ID של התמונה ב-dataTransfer
+        disableOtherDrags(img); 
+        // addLinkedImages(img);
+        // const offsetX = 20; // מרחק אופקי קבוע בין התמונות
+        // const offsetY = 20; // מרחק אנכי קבוע בין התמונות
+
+        // // עדכון המיקום של כל תמונה ב-linkedImages לפי המיקום של img1
+        // linkedImages.forEach((img, index) => {
+        //     img.style.left = `${e.pageX + offsetX * (index + 1)}px`;
+        //     img.style.top = `${e.pageY + offsetY * (index + 1)}px`;
+        // });
+    });
+
+    // מאפשר שחרור על כל תמונה אחרת
+    img.addEventListener('dragover', (e) => {
+        e.preventDefault(); // מאפשר שחרור של התמונה על כל תמונה אחרת
+    });
+
+    // כאשר משחררים את התמונה על תמונה אחרת
+    img.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const draggedImgId = e.dataTransfer.getData('text/plain'); // קבלת ה-ID של התמונה שנגררה
+        const draggedImg = document.getElementById(draggedImgId); // מציאת האלמנט של התמונה שנגררה
+
+        // בדיקה אם התמונה הנגררת קיימת ואם מתקיימים תנאי השחרור
+        if (draggedImg && DropChecker(img, draggedImg) && getCardNum(draggedImg) + 1 === getCardNum(img)) {
+            HideImageCover(draggedImg); // הסתרת כיסוי במידת הצורך
+            draggedImg.style.top = (parseInt(img.style.top, 10) + 40) + "px";
+            draggedImg.style.zIndex = parseInt(img.style.zIndex, 10) + 1;
+
+            console.log("העברה בוצעה: draggedImg is " + draggedImg.id);
+            img.parentNode.appendChild(draggedImg); // הוספת התמונה לעמודה של התמונה הנבחרת
+        }
+        enableAllDrags(); // החזרת יכולת הגרירה לכל התמונות לאחר סיום השחרור
+    });
+
+    // איפוס יכולת הגרירה אם הגרירה לא מסתיימת בשחרור חוקי
+    img.addEventListener('dragend', () => {
+        enableAllDrags(); // החזרת יכולת הגרירה לכל התמונות
+        draggedImage = null; // איפוס התמונה הנגררת
+    });
+}
 
 
+const linkedImages = []; 
+// פונקציה להוספת תמונות נוספות לגרירה עם התמונה הראשית
+function addLinkedImages(currentImg) {
+    // linkedImages.length = 0;
+    const colomn =positionImg(currentImg);
+    for (let i = 0; i < 40; i++) {
+        const img = Cards[`img${numbers[i]}`];
+    if( positionImg(Img) ===colomn && img.style.zIndex> currentImg.style.zIndex){
+        img.draggable = true;
+        linkedImages.push(img);
+    }
+        // החזרת יכולת הגרירה
+    }
+    // linkedImages.push(...otherImgs); // הוספת התמונות הנוספות למערך
+    // dragEventLisener(mainImg); // קריאה לפונקציית האירועים עבור התמונה הראשית
+}
+const headsection = document.getElementById("headd");
+for (let i=33 ; i<40; i++){
+    const num =numbers[i];//random num from 1-40
+    const imgCard =  Cards[`img${num}`];
+    console.log('iiiiiiiii    '+ imgCard);
+    imgCard.style.display ="none";
+    console.log("id=:"+imgCard.num);
+    headd.appendChild(imgCard);
+   
+} 
+function HIDDENCARD(img){
+    for (let i=33 ; i<40; i++){
+
+        const num =numbers[i];//random num from 1-40
+        const imgCard =  Cards[`img${num}`];
+    if(imgCard != img)
+        imgCard.style.display ="none";
+        
+    } 
+}
 
 //     ////////////////////this part is working dor the 7 card in the top of the page //////////
-//     const sevenNumbersArr = [numbers[34], numbers[35], numbers[36], numbers[37], numbers[38], numbers[39], numbers[40]];
-//     const imgHead = document.getElementById("imagHead");
+    const sevenNumbersArr = [numbers[33], numbers[34], numbers[35], numbers[36], numbers[37], numbers[38], numbers[39]];
+    const imgHead = document.getElementById("imgHead");
+    let clickedNum = sevenNumbersArr.length -1; // Start at the length of the array to go backward
+
+    imgHead.addEventListener("click", () => {
+    if (sevenNumbersArr.length > 0) { // Check if the array is not empty
+        if (clickedNum === 0) { // Use `===` for comparison
+            clickedNum = sevenNumbersArr.length -1; // Reset clickedNum when it reaches 0
+        }
+
+        clickedNum--; // Decrement clickedNum to move to the previous item
+        // const imgCard = sevenNumbersArr[clickedNum]; // Get the current image element
+        const imgId = `img${sevenNumbersArr[clickedNum]}`; 
+        const imgCard = document.getElementById(imgId);
+        if (imgCard) { // בדוק אם התמונה קיימת לפני השימוש ב-style
+            // Apply styles to imgCard
+            HIDDENCARD(imgCard);
+            imgCard.style.display ="block";
+            imgCard.style.width = "200px";
+            imgCard.style.height = "250px";
+            imgCard.style.position = "absolute";
+            imgCard.style.gridColumnStart = 3;
+            imgCard.style.gridColumnEnd = 4;
+        } else {
+            console.error("Image not found with ID:", imgId); // הצגת שגיאה בקונסול אם התמונה לא נמצאה
+        }
+    }
+});
+// const sevenNumbersArr = [numbers[34], numbers[35], numbers[36], numbers[37], numbers[38], numbers[39], numbers[40]];
+// const imgHead = document.getElementById("imgHead");
+
+// if (imgHead) { // בדיקה אם האלמנט נמצא
 //     let clickedNum = sevenNumbersArr.length; // Start at the length of the array to go backward
 
 //     imgHead.addEventListener("click", () => {
-//     if (sevenNumbersArr.length > 0) { // Check if the array is not empty
-//         if (clickedNum === 0) { // Use `===` for comparison
-//             clickedNum = sevenNumbersArr.length; // Reset clickedNum when it reaches 0
+//         if (sevenNumbersArr.length > 0) { // Check if the array is not empty
+//             if (clickedNum === 0) { // Use `===` for comparison
+//                 clickedNum = sevenNumbersArr.length; // Reset clickedNum when it reaches 0
+//             }
+
+//             clickedNum--; // Decrement clickedNum to move to the previous item
+//             const imgCard = Cards[`img${sevenNumbersArr[clickedNum]}`]; // Get the current image element by its ID
+//             console.log(sevenNumbersArr[clickedNum]);
+            
+//             // בדיקה אם imgCard מוגדר
+//             if (imgCard) {
+//                 // Apply styles to imgCard
+//                 imgCard.style.width = "200px";
+//                 imgCard.style.height = "250px";
+//                 imgCard.style.position = "absolute";
+//                 imgCard.style.gridColumnStart = 2;
+//                 imgCard.style.gridColumnEnd = 3;
+//             } else {
+//                 console.error("Image not found in Cards for id:", `img${sevenNumbersArr[clickedNum]}`);
+//             }
 //         }
-
-//         clickedNum--; // Decrement clickedNum to move to the previous item
-//         const imgCard = sevenNumbersArr[clickedNum]; // Get the current image element
-
-//         // Apply styles to imgCard
-//         imgCard.style.width = "200px";
-//         imgCard.style.height = "250px";
-//         imgCard.style.position = "absolute";
-//         imgCard.style.gridColumnStart = 2;
-//         imgCard.style.gridColumnEnd = 3;
-//     }
-// });
-// ///applying drag event lisener 
-// for (let i=0 ;i<7 ; i++){
-
+//     });
+// } else {
+//     console.error("Element with ID 'imagHead' not found.");
 // }
