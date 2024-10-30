@@ -1,0 +1,44 @@
+[33mcommit 6fef9c53b06736c89587aafc29d297ccede3c20a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Emeer Reesh <ameeer.reesh@gmail.com>
+Date:   Wed Oct 30 07:48:01 2024 +0200
+
+    finished the cards with the value and everything
+
+[33mcommit d80a17a3d7541727cc68390a4e75c56c96dbcd59[m
+Merge: 6c236c5 29b10da
+Author: Emeer Reesh <ameeer.reesh@gmail.com>
+Date:   Tue Oct 29 15:29:55 2024 +0200
+
+    Merge branch 'main' of https://github.com/AmeerReesh/hackaton
+    
+    "merging branches"
+
+[33mcommit 6c236c5c814146fd4722a281abfa2082b762d18f[m
+Author: Emeer Reesh <ameeer.reesh@gmail.com>
+Date:   Tue Oct 29 15:08:12 2024 +0200
+
+    just completed all 40 cards designed and ready to imploy. now wee need to add a designated colorful circle with a value to each card.
+
+[33mcommit 29b10da4ff6fdc3501f94db02205000a95ac9153[m
+Author: Wisambebar1 <wisambebar@gmail.com>
+Date:   Tue Oct 29 13:13:05 2024 +0200
+
+    change background of the card
+
+[33mcommit eda50424c4cde39aa0d5cc59b5c1fa428c4c8729[m
+Author: Wisambebar1 <wisambebar@gmail.com>
+Date:   Tue Oct 29 11:20:03 2024 +0200
+
+    drag and drop eventlisteners
+
+[33mcommit 0c91fdad90fc28b28296cba90ec6bfd11564368f[m
+Author: Emeer Reesh <ameeer.reesh@gmail.com>
+Date:   Mon Oct 28 15:44:04 2024 +0200
+
+    just added the first itiration of the arab cards, and now will start with the jew invnetions. ps: will push each card indivualy to the repository later on
+
+[33mcommit 22e596c364ee2aeacb3f70ce1030c0a89a5006f2[m
+Author: AmeerReesh <ameer.reesh@gmail.com>
+Date:   Mon Oct 28 09:59:58 2024 +0200
+
+    Initial commit
