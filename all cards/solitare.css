@@ -1,0 +1,106 @@
+#container{
+    width: 100%;
+    height: 1000px;
+    background-color:burlywood;
+}
+.head{
+    width: 100%;
+    height: 300px;
+    /* background-color: blueviolet; */
+    display: grid;
+    grid-template-columns:repeat(6,1fr) ;
+    gap:10px;
+} 
+.group{
+    width: 80%;
+    height: 250px;
+    border: 5px solid black;
+    padding: 15px;
+}
+.heartR{
+    grid-column-start:3 ;
+    grid-column-end: 4; 
+}
+.sqaure{
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+.heartB{
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+.tree{
+    grid-column-start: 6;
+    grid-column-end: 7;
+}
+
+
+
+
+.imgCover{
+    width: 80%;
+    height: 250px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.colomn{
+    width: 17%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+#order{
+    display: flex;
+    flex-direction: row;
+   
+}
+#one {
+    display: flex;
+    align-items: center;
+    position: relative; /* To control image positioning within this container */
+}
+#two {
+    display: flex;
+    align-items: center;
+    position: relative; /* To control image positioning within this container */
+}#three {
+    display: flex;
+    align-items: center;
+    position: relative; /* To control image positioning within this container */
+}#four {
+    display: flex;
+    align-items: center;
+    position: relative; /* To control image positioning within this container */
+}#six {
+    display: flex;
+    align-items: center;
+    position: relative; /* To control image positioning within this container */
+}#five {
+    display: flex;
+    align-items: center;
+    position: relative; /* To control image positioning within this container */
+}
+.img {
+    position: absolute;
+}
+
+.img1 {
+    z-index: 1; /* Bottom image */
+    top: 0;
+    left: 0;
+    
+}
+
+.img2 {
+    z-index: 2; /* Middle image */
+    top: 30px;
+    left: 0;
+}
+
+.img3 {
+    z-index: 3; /* Topmost image */
+    top: 60px;
+    left: 0;
+}
