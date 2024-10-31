@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2e3b55; /* Dark Slate Blue for a soft contrast */
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.rules-container {
+    background-color: #f5f5f5; /* Soft white for card-style readability */
+    color: #2e3b55;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.rules-title {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #c9a227; /* Gold accent for the title */
+}
+
+.rule {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #c3b1e1; /* Muted Lavender divider */
+}
+
+.rule h2 {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+    color: #2e3b55;
+}
+
+.rule p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333; /* Charcoal Gray for main text */
+}
+
+.rule:last-of-type {
+    border-bottom: 1px solid #c3b1e1;
+}
